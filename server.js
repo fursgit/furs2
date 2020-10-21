@@ -25,6 +25,10 @@ var PORT = process.env.PORT || 5000;
 var http = require('http');
 var server = http.Server(app);
 
+server.listen(PORT, function() {
+  console.log('Chat server running');
+});
+
 
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
@@ -90,4 +94,4 @@ function checkNotAuthenticated(req, res, next) {
   }
   next()
 }
-(app.listen(5000))
+
