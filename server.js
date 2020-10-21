@@ -20,8 +20,11 @@ initializePassport(
 
 const users = []
 
-var http = require('http')
-var PORT = procces.envPORT || 5000
+
+var PORT = process.env.PORT || 5000;
+var http = require('http');
+var server = http.Server(app);
+
 
 app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
@@ -87,4 +90,4 @@ function checkNotAuthenticated(req, res, next) {
   }
   next()
 }
-
+(app.listen(5000))
